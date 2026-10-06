@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -18,8 +17,6 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "usesCleartextTraffic": true,
-      "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.saran_r.GPSTrackingSystem"
     },
@@ -41,7 +38,23 @@
           }
         }
       ],
-      "expo-web-browser"
+      [
+    "react-native-maps",
+    {
+      "androidGoogleMapsApiKey": "AIzaSyDSyAHq63uDQU5mVMIKJ4Va3yy7YwZVjEs"
+    }
+  ],
+      "expo-web-browser",
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      [
+      "expo-build-properties",
+      {
+    "android": {
+      "usesCleartextTraffic": true
+    }
+  }]
     ],
     "experiments": {
       "typedRoutes": true,
@@ -52,9 +65,7 @@
       "eas": {
         "projectId": "b921e05e-848b-46fb-be91-f961bd548e74"
       }
-      
     },
-    
     "owner": "saran_r"
   }
 }

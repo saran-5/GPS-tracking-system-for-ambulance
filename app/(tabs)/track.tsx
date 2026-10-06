@@ -12,12 +12,12 @@ import {
   TextInput,
   Dimensions,
   StatusBar,
-  SafeAreaView,
   Platform
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, router } from 'expo-router';
 import { MaterialIcons, FontAwesome5, Feather, Ionicons } from '@expo/vector-icons';
-import MapView, { Marker, Polyline, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import MapView, { Marker, Polyline, Region, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import io from 'socket.io-client';
 
@@ -714,9 +714,9 @@ export default function TrackScreen() {
         <View style={styles.mapSection}>
           <View style={styles.mapContainer}>
             <MapView
+              provider={PROVIDER_GOOGLE}
               ref={mapRef}
               style={styles.map}
-              provider={PROVIDER_GOOGLE}
               initialRegion={getInitialRegion()}
               showsUserLocation={true}
               showsMyLocationButton={false}

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -36,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Atlas Connection
-const MONGODB_URI = 'mongodb+srv://saranzoro2_db_user:N0VQ9YzVgKTzyTSi@cluster0.f45wbby.mongodb.net/ambulance?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,

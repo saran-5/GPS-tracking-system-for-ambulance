@@ -16,7 +16,7 @@ import { ThemedView } from '@/components/themed-view';
 import { useRouter } from 'expo-router';
 import { Button } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import MapView, { Marker, PROVIDER_GOOGLE, Polyline } from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 
 // Calculate distance between two coordinates in km
 const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
@@ -450,7 +450,6 @@ export default function DriverDashboardScreen() {
               <MapView
                 style={styles.map}
                 region={mapRegion}
-                provider={PROVIDER_GOOGLE}
                 showsUserLocation={true}
                 showsMyLocationButton={true}
               >
